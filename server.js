@@ -368,5 +368,6 @@ Keep the total time within ${timeAvailable} minutes and only use exercises from 
   }
 }
 
-const server = new WorkoutMCPServer();
-server.run().catch(console.error);
+// const server = new WorkoutMCPServer();
+// server.run().catch(console.error);
+module.exports = WorkoutMCPServer;
