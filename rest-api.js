@@ -10,6 +10,9 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 const mcp = new WorkoutMCPServer();
+mcp.run().catch(err => {
+  console.error("Failed to start MCP server:", err);
+});
 
 app.get('/health', async (req, res) => {
   const result = await mcp.server.handlers.get('tools/call')({
